@@ -1,12 +1,13 @@
-import { NavLink } from 'react-router-dom'
-import './Sidebar.css'
+import { NavLink } from "react-router-dom";
+import "./Sidebar.css";
 
 function Sidebar() {
   const menuItems = [
-    { path: '/', label: '仪表板', icon: '📊' },
-    { path: '/users', label: '用户管理', icon: '👥' },
-    { path: '/settings', label: '系统设置', icon: '⚙️' }
-  ]
+    { path: "/", label: "仪表板", icon: "📊" },
+    { path: "/users", label: "用户管理", icon: "👥" },
+    { path: "/settings", label: "系统设置", icon: "⚙️" },
+    { path: "/playground", label: "学习代码", icon: "💻" },
+  ];
 
   return (
     <aside className="sidebar">
@@ -19,8 +20,8 @@ function Sidebar() {
             <li key={item.path}>
               <NavLink
                 to={item.path}
-                className={({ isActive }) => isActive ? 'active' : ''}
-                end={item.path === '/'}
+                className={({ isActive }) => (isActive ? "active" : "")}
+                end={item.path === "/"}
               >
                 <span className="icon">{item.icon}</span>
                 <span className="label">{item.label}</span>
@@ -30,7 +31,7 @@ function Sidebar() {
         </ul>
       </nav>
     </aside>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;
